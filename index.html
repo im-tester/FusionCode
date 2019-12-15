@@ -51,7 +51,7 @@
         console.log("connected");
 }
         web3.eth.defaultAccount = web3.eth.accounts[0];
-        var CoursetroContract = web3.eth.contract([
+        var StudentContract = web3.eth.contract([
     {
         "constant": false,
         "inputs": [
@@ -89,21 +89,11 @@
         "type": "function"
     }
 ]);
-       var Coursetro = CoursetroContract.at('0x692a70D2e424a56D2C6C27aA97D1a86395877b3A') ;
-       console.log(Coursetro);
-
-       // Coursetro.getInstructor(function(error, result){
-       //      if(!error)
-       //          {
-       //              $("#instructor").html(result[0]+' ('+result[1]+' years old)');
-       //              console.log(result);
-       //          }
-       //      else
-       //          console.error(error);
-       //  });
+       var Student = StudentContract.at('0x692a70D2e424a56D2C6C27aA97D1a86395877b3A') ;
+       console.log(Student);
 
         $("#button").click(function() {
-            Coursetro.setInstructor($("#name").val(), $("#age").val());
+            Student.setInstructor($("#name").val(), $("#age").val());
         });
     </script>
 
